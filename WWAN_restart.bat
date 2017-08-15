@@ -22,10 +22,11 @@ if "%ELEVATED%" neq "yes" (
 )
 
 :admins
-  "C:\Users\i\Desktop\devcon" disable "USB\Vid_0bdb&Pid_193e&Cdc_0d&Mi_06"
-  "C:\Users\i\Desktop\devcon" enable "USB\Vid_0bdb&Pid_193e&Cdc_0d&Mi_06"
+  devcon disable "USB\Vid_0bdb&Pid_193e&Cdc_0d&Mi_06"
+  devcon enable "USB\Vid_0bdb&Pid_193e&Cdc_0d&Mi_06"
   goto exit1
 
 :runas
   powershell -Command Start-Process -Verb runas "%0" -ArgumentList "/R" 
 :exit1
+pause
